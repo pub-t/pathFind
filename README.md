@@ -1,2 +1,2 @@
-install mongoose
-*node parse
+#use stops
+* node parse
