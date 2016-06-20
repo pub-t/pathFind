@@ -12,14 +12,28 @@ mongoose.connect(uristring, function (error) {
 });
 
 var busSchema = new mongoose.Schema({
-    id: {type:String, index:{unique:false}},
+    id: {type:Number, index:{unique:true}},
     name: String,
     lat: {type:Number, type:{unique:true}},
     lon: {type:Number, type:{unique:true}}
 });
 
+var relationSchema = new mongoose.Schema({
+    id: {type:Number, index:{unique:false}},
+    from: String,
+    to: String,
+    number: String,
+    type: String,
+    route:[
+      Number
+    ]
+});
 
 
-const Bus =  mongoose.model('Bus', busSchema);
 
-module.exports = Bus;
+const Bus =  mongoose.model('buses', busSchema);
+
+const Relation =  mongoose.model('relations', relationSchema);
+
+module.exports.Bus = Bus;
+module.exports.Relation = Relation;
