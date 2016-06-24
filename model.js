@@ -7,7 +7,7 @@ mongoose.connect(uristring, function (error) {
     if (error) {
         console.log ('ERROR connecting to: ' + uristring + '. ' + error);
     } else {
-        console.log ('Succeeded connected to: ' + uristring);
+        console.log ('\nConnect to: ' + uristring);
     }
 });
 
